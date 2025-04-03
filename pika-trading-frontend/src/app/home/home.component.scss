@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4e1c5;
+    margin: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #d4a373;
+    padding: 15px;
+    align-items: center;
+  }
+  
+  .navbar nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .hero img {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .products {
+    padding: 20px;
+  }
+  
+  .grid {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  

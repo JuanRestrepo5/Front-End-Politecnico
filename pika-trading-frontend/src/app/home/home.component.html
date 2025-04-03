@@ -1,0 +1,28 @@
+<header class="navbar">
+    <div class="logo">Pika Trading</div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Cartas</a>
+      <a href="#">Sobres</a>
+    </nav>
+    <button class="login">Iniciar sesión</button>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <h1>Pika Trading - Adquiere las cartas que buscas</h1>
+      <p>¡Pikachu te trae tus cartas ideales, accesorios como tapetes y fundas para tus combates Pokémon! ⚡</p>
+      <img src="assets/pikachu-cards.jpg" alt="Pikachu con cartas">
+    </section>
+  
+    <section class="products">
+      <h2>Productos disponibles:</h2>
+      <div class="grid">
+        <div *ngFor="let product of products" class="card">
+          <img [src]="'assets/' + product.image" [alt]="product.name">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+        </div>
+      </div>
+    </section>    
+  </main>  
