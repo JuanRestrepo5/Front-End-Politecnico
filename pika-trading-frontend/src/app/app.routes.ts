@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeLayoutComponent } from './layout/home-layout/home-layout.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 
 export const routes: Routes = [ 
@@ -14,7 +15,8 @@ export const routes: Routes = [
           { path: 'home', component: HomeComponent },
           { path: 'login', component: LoginComponent },
           { path: 'registro', component: RegistroComponent},
-          { path:'recuperar-contrasena', component: RecuperarContrasenaComponent}
+          { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent},
+          { path: 'sobre-nosotros', component: SobreNosotrosComponent}
         ] },
 ];
 
