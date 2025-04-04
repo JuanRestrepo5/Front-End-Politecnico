@@ -69,3 +69,11 @@ button:hover {
 .links a:hover {
     text-decoration: underline;
 }
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // ocupa toda la altura de la pantalla
+    width: 100%;
+  }
