@@ -1,0 +1,71 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0d7a5; /* Color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del login */
+.login-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f6d5a2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    color: #3d2c1e;
+}
+
+/* Campos de entrada */
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botón de inicio de sesión */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Enlaces */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

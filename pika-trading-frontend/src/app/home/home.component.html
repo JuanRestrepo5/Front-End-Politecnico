@@ -1,28 +1,71 @@
-<header class="navbar">
-    <div class="logo">Pika Trading</div>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Cartas</a>
-      <a href="#">Sobres</a>
-    </nav>
-    <button class="login">Iniciar sesión</button>
-  </header>
+<main>
+  <section class="hero">
+    <h2>Encuentra las cartas Pokémon que buscas</h2>
+    <p>¡Pikachu te trae tus cartas ideales, accesorios y mucho más!</p>
+    <img src="assets/pikachu-banner.jpeg" alt="Cartas Pokémon">
+  </section>
   
-  <main>
-    <section class="hero">
-      <h1>Pika Trading - Adquiere las cartas que buscas</h1>
-      <p>¡Pikachu te trae tus cartas ideales, accesorios como tapetes y fundas para tus combates Pokémon! ⚡</p>
-      <img src="assets/pikachu-cards.jpg" alt="Pikachu con cartas">
-    </section>
+  <section class="productos">
+    <h2>Puedes encontrar:</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/cartas.jpg" alt="Cartas Pokémon">
+        <h3>Cartas</h3>
+        <p>Cartas individuales para mejorar tu mazo.</p>
+      </div>
+      <div class="card">
+        <img src="assets/sobres.jpg" alt="Sobres Pokémon">
+        <h3>Sobres</h3>
+        <p>Sobres con cartas sorpresa.</p>
+      </div>
+      <div class="card">
+        <img src="assets/decks.jpg" alt="Decks Pokémon">
+        <h3>Decks</h3>
+        <p>Mazos completos listos para jugar.</p>
+      </div>
+    </div>
+  </section>
   
-    <section class="products">
-      <h2>Productos disponibles:</h2>
-      <div class="grid">
-        <div *ngFor="let product of products" class="card">
-          <img [src]="'assets/' + product.image" [alt]="product.name">
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.description }}</p>
+  <section class="most-visited">
+    <h2>Lo más visitado:</h2>
+    <div class="visited-container">
+      <div class="featured-product">
+        <img src="assets/stellar-crown.jpg" alt="Scarlet & Violet - Stellar Crown">
+        <h3>Scarlet & Violet - Stellar Crown</h3>
+        <p>Description of featured product</p>
+      </div>
+      <div class="other-products">
+        <div class="product">
+          <img src="assets/prismatic-box.jpg" alt="Prismatic Evolutions Box">
+          <h4>Prismatic Evolutions Elite Trainer Box</h4>
+          <p>11 Pokémon TCG booster packs</p>
+          <p><strong>$600.000</strong></p>
+        </div>
+        <div class="product">
+          <img src="assets/lucario-sleeves.jpg" alt="Fundas Pokémon">
+          <h4>Fundas Sleeves Protectores Pokémon</h4>
+          <p>Fundas con diseño de Lucario</p>
+          <p><strong>$90.000</strong></p>
         </div>
       </div>
-    </section>    
-  </main>  
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>Comentarios recientes</h2>
+    <div class="reviews-container">
+      <div class="review">
+        <p>“Precios insuperables”</p>
+        <p><strong>Cristian</strong> - Usuario</p>
+      </div>
+      <div class="review">
+        <p>“Increíble colección”</p>
+        <p><strong>Motato</strong> - Usuario</p>
+      </div>
+      <div class="review">
+        <p>“Gran atención al cliente”</p>
+        <p><strong>Yuliana</strong> - Usuario</p>
+      </div>
+    </div>
+  </section>
+</main>

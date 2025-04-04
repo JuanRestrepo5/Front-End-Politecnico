@@ -6,9 +6,9 @@ export default `<!doctype html>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>body{font-family:Arial,sans-serif;background-color:wheat;color:#222;margin:0;padding:0}</style><link rel="stylesheet" href="styles-TEFPKD4N.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-TEFPKD4N.css"></noscript></head>
+<style>body{font-family:Arial,sans-serif;background-color:wheat;color:#222;margin:0;padding:0}</style><link rel="stylesheet" href="styles-4D5RGNLT.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-4D5RGNLT.css"></noscript></head>
 <body ngcm="">
   <app-root></app-root>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-F2PWZCKF.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-P6AXP5O7.js" type="module"></script></body>
 </html>
 `;

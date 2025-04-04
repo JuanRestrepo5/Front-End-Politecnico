@@ -1,2 +1,0 @@
-export default `body{font-family:Arial,sans-serif;background-color:wheat;color:#222;margin:0;padding:0}header{background-color:#c2934e;padding:15px;display:flex;justify-content:space-between;align-items:center}h1,h2{color:#2c1b0b}.card{background-color:#fff;border-radius:10px;box-shadow:0 2px 4px #0000001a;padding:15px}
-`;
