@@ -7,13 +7,26 @@ $text-color: #222;
 $white: #ffffff;
 $footer-bg: #b8860b;
 
-// General
-body {
+// Reset base
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: $secondary-color;
   color: $text-color;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-outlet + * {
+  flex: 1;
 }
 
 // Header
@@ -24,28 +37,41 @@ header {
   justify-content: space-between;
   align-items: center;
   color: black;
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  nav ul li:last-child a {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: color.scale(black, $lightness: -10%);
+    }
+  }
+  
 
   nav {
     display: flex;
     align-items: center;
     gap: 20px;
-
-    a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        color: color.adjust($primary-color, $lightness: -20%);
-      }
-    }
+    margin-left: auto;
 
     ul {
       list-style: none;
       display: flex;
       gap: 15px;
+      padding: 0;
+      margin: 0;
+      margin-left: auto;
 
       li {
         a {
@@ -54,12 +80,41 @@ header {
           border-radius: 5px;
           background-color: $primary-color;
           cursor: pointer;
+          text-decoration: none;
+          display: inline-block;
           transition: color 0.3s ease-in-out;
 
-         &:hover {
-         color: color.adjust($primary-color, $lightness: -10%);
+          &:hover {
+            color: color.adjust($primary-color, $lightness: -10%);
+          }
+        }
+      }
+    }
+    
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    nav {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+
+      ul {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+
+        li {
+          width: 100%;
         }
 
+        a {
+          display: block;
+          width: 100%;
         }
       }
     }
@@ -69,9 +124,14 @@ header {
 // Sección principal
 main {
   text-align: center;
-  padding: 40px 20px; // Más espaciado
+  //padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+
+  h2 {
+    position: relative;
+    top: -20px; // Ajusta el valor según lo necesites
+  }
 
   img {
     max-width: 100%;
@@ -84,7 +144,7 @@ main {
 .hero {
   text-align: center;
   padding: 40px 0;
-  
+
   h1 {
     font-size: 2rem;
     color: $primary-color;
@@ -214,6 +274,7 @@ footer {
   padding: 20px;
   color: white;
   text-align: center;
+  margin-top: auto;
 
   .footer-content {
     display: flex;
@@ -241,4 +302,3 @@ footer {
     }
   }
 }
-
