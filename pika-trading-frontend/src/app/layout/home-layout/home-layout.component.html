@@ -5,7 +5,8 @@
         <li><a routerLink="/home">Inicio</a></li>
         <li><a routerLink="/cartas">Cartas</a></li>
         <li><a href="#">Sobres</a></li>
-        <li><a routerLink="/login">Iniciar sesión</a></li>
+        <li *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
+        <li *ngIf="usuarioLogueado"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
       </ul>
     </nav>
   </header>

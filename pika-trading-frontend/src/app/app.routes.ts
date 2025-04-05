@@ -6,12 +6,15 @@ import { RegistroComponent } from './registro/registro.component';
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { CartasComponent } from './pages/cartas/cartas.component';
+import { AuthGuard } from './guards/auth.guard';
+import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
 
 
 export const routes: Routes = [ 
     {path: '',
         component: HomeLayoutComponent,
         children: [
+          {path: 'admin', component: UsuariosAdminComponent, canActivate: [AuthGuard]},
           { path: '', redirectTo: 'home', pathMatch: 'full' },
           { path: 'home', component: HomeComponent },
           { path: 'login', component: LoginComponent },

@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "/": {},
-    "/home": {},
-    "/login": {},
-    "/recuperar-contrasena": {},
-    "/registro": {}
-  }
-}

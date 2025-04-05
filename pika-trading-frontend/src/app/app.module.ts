@@ -10,6 +10,7 @@ import { RegistroComponent } from './registro/registro.component'; //Componente 
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component'; // Componente recuperar contraseña
 //import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component'; // Componente sobre nosotros
 import { CartasComponent } from './pages/cartas/cartas.component'; // Componente cartas
+import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar formularios en Angular
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CartasComponent } from './pages/cartas/cartas.component'; // Componente
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule, // Importar FormsModule para usar formularios en Angular
   ],
   providers: [],
   bootstrap: [AppComponent]
