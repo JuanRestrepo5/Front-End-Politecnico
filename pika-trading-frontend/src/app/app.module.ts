@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component'; // Componente login
 import { RegistroComponent } from './registro/registro.component'; //Componente registro
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component'; // Componente recuperar contraseña
+//import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component'; // Componente sobre nosotros
+import { CartasComponent } from './pages/cartas/cartas.component'; // Componente cartas
 
 @NgModule({
   declarations: [
@@ -15,8 +17,8 @@ import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-c
     LoginComponent,// Se agrega el componente nuevo login
     HomeComponent,
     RegistroComponent, // se agrega el componente nuevo registro
-    RecuperarContrasenaComponent //Se agrega el componente nuevo recuperar contraseña
-    
+    RecuperarContrasenaComponent, //Se agrega el componente nuevo recuperar contraseña
+    CartasComponent
   ],
   imports: [
     BrowserModule,

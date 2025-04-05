@@ -7,4 +7,42 @@
   main {
     flex: 1;
   }
+
+  .header-cartas {
+    width: 100%;
+    position: absolute;
+    background: transparent;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Alinea el logo/título a la izquierda y el nav a la derecha */
+    align-items: center;
+    padding: 15px 50px;
+    box-sizing: border-box;
+}
+
+.header-cartas nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-cartas nav ul li a {
+  background: transparent;
+  padding: 5px 10px; /* Ajustar si es necesario */
+  min-width: 80px; /* Asegura que todos tengan el mismo tamaño */
+  text-align: center;
+  height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+  
   

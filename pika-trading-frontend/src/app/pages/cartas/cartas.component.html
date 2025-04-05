@@ -1,0 +1,23 @@
+<div class="banner">
+  <h1>Cartas y sobres</h1>
+  <p>Amplía tu colección con las cartas más recientes de Pokémon TCG</p>
+</div>
+
+<div class="cartas-container">
+  <h2>Últimas cartas agregadas</h2>
+  <div class="cartas-grid">
+    <div class="carta" *ngFor="let carta of cartas">
+      <img [src]="carta.imagen" [alt]="carta.nombre">
+      <h3>{{ carta.nombre }}</h3>
+      <p>{{ carta.precio | currency }}</p>
+
+      <div class="cantidad-selector">
+        <button (click)="disminuirCantidad(carta)" [disabled]="carta.cantidad <= 1">−</button>
+        <span>{{ carta.cantidad }}</span>
+        <button (click)="aumentarCantidad(carta)">+</button>
+      </div>
+
+      <button (click)="agregarAlCarrito(carta)">Agregar</button>
+    </div>
+  </div>
+</div>

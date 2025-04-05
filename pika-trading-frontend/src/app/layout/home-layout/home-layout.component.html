@@ -1,9 +1,9 @@
-  <header>
+  <header [ngClass]="{ 'header-cartas': isCartas }" class="main-header">
     <h1>🌟 Pika Trading - Adquiere las cartas que buscas 🌟</h1>
     <nav>
       <ul>
         <li><a routerLink="/home">Inicio</a></li>
-        <li><a href="#">Cartas</a></li>
+        <li><a routerLink="/cartas">Cartas</a></li>
         <li><a href="#">Sobres</a></li>
         <li><a routerLink="/login">Iniciar sesión</a></li>
       </ul>
