@@ -11,6 +11,7 @@ import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-c
 //import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component'; // Componente sobre nosotros
 import { CartasComponent } from './pages/cartas/cartas.component'; // Componente cartas
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar formularios en Angular
+import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar 
     HomeComponent,
     RegistroComponent, // se agrega el componente nuevo registro
     RecuperarContrasenaComponent, //Se agrega el componente nuevo recuperar contraseña
-    CartasComponent
+    CartasComponent,
+    UsuariosAdminComponent
   ],
   imports: [
     BrowserModule,

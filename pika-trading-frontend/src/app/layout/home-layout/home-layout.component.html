@@ -4,6 +4,11 @@
       <ul>
         <li><a routerLink="/home">Inicio</a></li>
         <li><a routerLink="/cartas">Cartas</a></li>
+
+        <li *ngIf="rol === 'admin'"><a routerLink="/usuarios">Lista usuarios</a></li>
+        <li *ngIf="rol === 'admin'"><a routerLink="/pedidos">Pedidos</a></li>
+        <li *ngIf="rol === 'admin'"><a routerLink="/estadisticas">Estadísticas</a></li>
+        
         <li><a href="#">Sobres</a></li>
         <li *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
         <li *ngIf="usuarioLogueado"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
