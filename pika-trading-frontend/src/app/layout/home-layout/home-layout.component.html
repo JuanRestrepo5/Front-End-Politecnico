@@ -2,13 +2,14 @@
     <h1>🌟 Pika Trading - Adquiere las cartas que buscas 🌟</h1>
     <nav>
       <ul>
-        <li><a routerLink="/home">Inicio</a></li>
-        <li><a routerLink="/cartas">Cartas</a></li>
 
+        <!-- Bloque logico del nav barr para admin-->
         <li *ngIf="rol === 'admin'"><a routerLink="/admin">Lista usuarios</a></li>
         <li *ngIf="rol === 'admin'"><a routerLink="/pedidos">Pedidos</a></li>
         <li *ngIf="rol === 'admin'"><a routerLink="/estadisticas">Estadísticas</a></li>
-        
+        <!-- Fin bloque logico del nav barr para admin-->
+        <li><a routerLink="/home">Inicio</a></li>
+        <li><a routerLink="/cartas">Cartas</a></li>
         <li><a routerLink="/sobres">Sobres</a></li>
         <li *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
         <li *ngIf="usuarioLogueado"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
@@ -27,7 +28,7 @@
       </div>
       <ul>
         <li><a routerLink="/sobre-nosotros">Quiénes somos</a></li>
-        <li><a href="#">Contáctanos</a></li>
+        <li><a href="/sobre-nosotros">Contáctanos</a></li>
         <li><a href="#">FQA</a></li>
       </ul>
     </div>

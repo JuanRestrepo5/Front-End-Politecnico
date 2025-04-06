@@ -47,5 +47,12 @@
     "email": "james@equipoRocket.com",
     "password": "meowth!",
     "rol": "usuario"
+  },
+  {
+    "nombre": "Jhones Osorio",
+    "email": "jhones@mm.com",
+    "password": "jhones123",
+    "id": 8,
+    "rol": "usuario"
   }
 ]

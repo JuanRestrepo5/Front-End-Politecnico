@@ -21,7 +21,7 @@ import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.co
     RegistroComponent, // se agrega el componente nuevo registro
     RecuperarContrasenaComponent, //Se agrega el componente nuevo recuperar contraseña
     CartasComponent,
-    UsuariosAdminComponent
+    UsuariosAdminComponent,
   ],
   imports: [
     BrowserModule,

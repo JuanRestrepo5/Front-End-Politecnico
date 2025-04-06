@@ -1,17 +1,18 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
 import {  OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class LoginComponent implements OnInit {
   email: string = '';
