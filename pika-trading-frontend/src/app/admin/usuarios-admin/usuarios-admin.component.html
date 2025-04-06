@@ -1,15 +1,28 @@
-<h2>Usuarios registrados</h2>
-<table>
-  <tr>
-    <th>ID</th><th>Nombre</th><th>Email</th><th>Rol</th><th>Acciones</th>
-  </tr>
-  <tr *ngFor="let u of usuarios">
-    <td>{{ u.id }}</td>
-    <td>{{ u.nombre }}</td>
-    <td>{{ u.email }}</td>
-    <td>{{ u.rol }}</td>
-    <td>
-      <button (click)="eliminarUsuario(u.id)">Eliminar</button>
-    </td>
-  </tr>
-</table>
+<div class="usuarios-admin-contenedor">
+  <div class="lista-usuarios">
+    <div *ngFor="let u of usuarios" class="tarjeta-usuario">
+      <img src="URL_O_ICONO_USUARIO" class="avatar" />
+      <div>
+        <p><strong>Usuario</strong> {{ u.nombre }}</p>
+        <p><strong>Correo</strong> {{ u.email }}</p>
+      </div>
+      <div class="acciones">
+        <button (click)="eliminarUsuario(u.id)">🗑️</button>
+        <button (click)="editarUsuario(u.id)">✏️</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tarjeta-nuevo-usuario">
+    <div class="contenido">
+      <p class="icono">👤➕</p>
+      <p><strong>Añadir nuevo usuario</strong></p>
+      <p>Usuarios activos {{ usuarios.length }}</p>
+      <button (click)="irAFormularioNuevoUsuario()">➤</button>
+    </div>
+  </div>
+</div>
+
+
+
+

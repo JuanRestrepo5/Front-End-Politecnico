@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeLayoutComponent {
   usuarioLogueado: any = null;
+  rol: string = ''; // <-- se agrega
   isCartas: boolean = false;
 
   constructor(
@@ -22,7 +23,16 @@ export class HomeLayoutComponent {
     // Se actualiza cuando cambia el usuario
     this.authService.usuario$.subscribe((usuario) => {
       this.usuarioLogueado = usuario;
+      this.rol = usuario?.rol ?? ''; //<-- se agrega
     });
+
+    //tipo de usuario
+    if (isPlatformBrowser(this.platformId)) {
+      const rolGuardado = localStorage.getItem('rol');
+      if (rolGuardado && !this.rol) {
+        this.rol = rolGuardado;
+      }
+    }
 
     // Detectar si estamos en la vista de cartas
     this.router.events.subscribe((event) => {

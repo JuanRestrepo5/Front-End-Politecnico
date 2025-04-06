@@ -1,0 +1,69 @@
+.usuarios-admin-contenedor {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f6d7a7;
+  
+    .lista-usuarios {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  
+    .tarjeta-usuario {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 12px;
+      padding: 12px;
+      gap: 12px;
+  
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+  
+      .acciones {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+  
+        button {
+          background: none;
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .tarjeta-nuevo-usuario {
+      width: 30%;
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .contenido {
+        text-align: center;
+  
+        .icono {
+          font-size: 32px;
+        }
+  
+        button {
+          margin-top: 10px;
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  
