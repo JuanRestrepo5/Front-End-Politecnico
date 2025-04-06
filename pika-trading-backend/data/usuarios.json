@@ -9,7 +9,7 @@
   {
     "id": 2,
     "nombre": "Ash Ketchum",
-    "email": "ash@paleta.com",
+    "email": "ashss@paleta.com",
     "password": "pikachu123",
     "rol": "usuario"
   },
@@ -50,8 +50,8 @@
   },
   {
     "nombre": "Jhones Osorio",
-    "email": "jhones@mm.com",
-    "password": "jhones123",
+    "correo": "asdfasd@g.com",
+    "contrasena": "123",
     "id": 8,
     "rol": "usuario"
   }

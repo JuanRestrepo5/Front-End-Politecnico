@@ -7,6 +7,10 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   private apiUrl = 'http://localhost:3000/usuarios';
 
+  crearUsuario(usuario: any) {
+    return this.http.post('http://localhost:3000/registro', usuario);
+  }
+  
   constructor(private http: HttpClient) {}
 
   getUsuarios() {

@@ -1,28 +1,75 @@
-<div class="usuarios-admin-contenedor">
+<div class="usuarios-container">
   <div class="lista-usuarios">
-    <div *ngFor="let u of usuarios" class="tarjeta-usuario">
-      <img src="URL_O_ICONO_USUARIO" class="avatar" />
-      <div>
-        <p><strong>Usuario</strong> {{ u.nombre }}</p>
-        <p><strong>Correo</strong> {{ u.email }}</p>
+    <div
+      class="usuario-card"
+      *ngFor="let usuario of usuarios"
+    >
+      <img src="\assets\Iconos\avatar charizard.jpg" alt="Avatar" class="avatar" />
+      <div class="info">
+        <div class="titulo">Usuario</div>
+        <div>{{ usuario.nombre }}</div>
+        <div class="titulo">Correo</div>
+        <div>{{ usuario.email }}</div>
       </div>
       <div class="acciones">
-        <button (click)="eliminarUsuario(u.id)">🗑️</button>
-        <button (click)="editarUsuario(u.id)">✏️</button>
+        <button (click)="editarUsuario(usuario.id)">✏️</button>
+        <button (click)="eliminarUsuario(usuario.id)">🗑️</button>
+      </div>
+
+      <!-- Mostrar el formulario de edición solo si coincide el ID -->
+      <div *ngIf="usuarioEditando?.id === usuario.id" class="formulario-edicion">
+        <h4>Editar Usuario</h4>
+        <label>
+          Nombre:
+          <input [(ngModel)]="usuarioEditando.nombre" />
+        </label>
+        <br />
+        <label>
+          Correo:
+          <input [(ngModel)]="usuarioEditando.email" />
+        </label>
+        <br />
+        <div class="acciones">
+          <button (click)="guardarCambios()">💾 Guardar</button>
+          <button (click)="cancelarEdicion()">❌ Cancelar</button>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="tarjeta-nuevo-usuario">
-    <div class="contenido">
-      <p class="icono">👤➕</p>
-      <p><strong>Añadir nuevo usuario</strong></p>
-      <p>Usuarios activos {{ usuarios.length }}</p>
-      <button (click)="irAFormularioNuevoUsuario()">➤</button>
+ 
+  <!--Formulario para editar usuario-->
+  <div class="panel">
+    <button type="button" (click)="mostrarFormulario = !mostrarFormulario">
+      ➕ Añadir nuevo usuario 
+    </button>
+    <p>Usuarios activos {{ usuarios.length }}</p>
+  
+    <div *ngIf="mostrarFormulario" class="formulario-nuevo-usuario">
+      <form (ngSubmit)="agregarUsuario()">
+        <div>
+          <label>Nombre:</label>
+          <input type="text" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required />
+        </div>
+    
+        <div>
+          <label>Apellido:</label>
+          <input type="text" [(ngModel)]="nuevoUsuario.apellido" name="apellido" required />
+        </div>
+    
+        <div>
+          <label>Correo:</label>
+          <input type="email" [(ngModel)]="nuevoUsuario.correo" name="correo" required />
+        </div>
+    
+        <div>
+          <label>Contraseña:</label>
+          <input type="password" [(ngModel)]="nuevoUsuario.contrasena" name="contrasena" required />
+        </div>
+    
+        <button type="submit">Guardar</button>
+      </form>
     </div>
+    
   </div>
+  
 </div>
-
-
-
-
