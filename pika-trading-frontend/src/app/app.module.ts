@@ -12,6 +12,7 @@ import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-c
 import { CartasComponent } from './pages/cartas/cartas.component'; // Componente cartas
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar formularios en Angular
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
+import { NgChartsModule } from 'ng2-charts'; // Importar ChartsModule para usar gráficos de ng2-charts
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.co
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    FormsModule, // Importar FormsModule para usar formularios en Angular
+    FormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
