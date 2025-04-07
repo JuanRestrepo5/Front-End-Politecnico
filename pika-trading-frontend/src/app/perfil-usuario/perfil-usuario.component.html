@@ -1,0 +1,41 @@
+<div class="perfil-container">
+    <h2>Mi Perfil</h2>
+  
+    <div *ngIf="!editando" class="perfil-info">
+      <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+      <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+      <p><strong>Email:</strong> {{ usuario.email }}</p>
+      <div class="perfil-buttons">
+        <button (click)="activarEdicion()">Editar</button>
+        <form action="/logout" method="POST" style="display: inline;">
+            <button (click)="cerrarSesion()">Cerrar sesión</button>
+          </form>
+      </div>
+    </div>
+  
+    <div *ngIf="editando" class="perfil-edit">
+      <label>Nombre:
+        <input [(ngModel)]="usuario.nombre" />
+      </label>
+  
+      <label>Apellido:
+        <input [(ngModel)]="usuario.apellido" />
+      </label>
+  
+      <label>Email:
+        <input [(ngModel)]="usuario.email" />
+      </label>
+  
+      <label>Contraseña:
+        <input [(ngModel)]="usuario.password" type="password" />
+      </label>
+  
+      <div class="perfil-buttons">
+        <button (click)="guardarCambios()">Guardar</button>
+        <button (click)="cancelarEdicion()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  
+
+  
