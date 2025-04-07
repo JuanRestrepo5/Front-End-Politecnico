@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../cart/cart.service';
 
 @Component({
   selector: 'app-cartas',
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cartas.component.scss'
 })
 export class CartasComponent {
+  constructor(private cartService: CartService) {}
+
   cartas = [
     { nombre: 'Charizard', precio: 2500, imagen: '/assets/cartas/charizard.jpg',cantidad: 1 },
     { nombre: 'Dragapult', precio: 2100, imagen: '/assets/cartas/dragapult.jpg',cantidad: 1 },
@@ -31,6 +34,7 @@ export class CartasComponent {
   }
 
   agregarAlCarrito(carta: any) {
-    console.log(`Agregaste ${carta.cantidad || 1} unidades de ${carta.nombre} al carrito`);
+    this.cartService.addToCart(carta, carta.cantidad || 1);
+    console.log(`✅ ${carta.cantidad || 1} de ${carta.nombre} agregado al carrito`);
   }
 }

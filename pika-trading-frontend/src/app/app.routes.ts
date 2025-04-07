@@ -8,6 +8,7 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 import { CartasComponent } from './pages/cartas/cartas.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
+import { CartComponent } from './cart/cart.component';
 
 
 export const routes: Routes = [ 
@@ -21,7 +22,8 @@ export const routes: Routes = [
           { path: 'registro', component: RegistroComponent},
           { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent},
           { path: 'sobre-nosotros', component: SobreNosotrosComponent},
-          { path: 'cartas', component: CartasComponent }
+          { path: 'cartas', component: CartasComponent },
+          { path: 'carrito', component: CartComponent }
         ] },
 ];
 

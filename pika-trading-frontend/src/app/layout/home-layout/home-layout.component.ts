@@ -2,6 +2,8 @@ import { Component, PLATFORM_ID, Inject } from '@angular/core';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../cart/cart.service';
+
 
 @Component({
   standalone: true,
@@ -14,10 +16,13 @@ export class HomeLayoutComponent {
   usuarioLogueado: any = null;
   rol: string = ''; // <-- se agrega
   isCartas: boolean = false;
+  totalItems: number = 0;
+
 
   constructor(
     private router: Router,
     private authService: AuthService,
+    private cartService: CartService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     // Se actualiza cuando cambia el usuario
@@ -37,10 +42,18 @@ export class HomeLayoutComponent {
     // Detectar si estamos en la vista de cartas
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isCartas = this.router.url.includes('/cartas');
+        this.isCartas = event.urlAfterRedirects.includes('/cartas');
       }
     });
+
+    this.cartService.cart$.subscribe((carrito) => {
+      this.totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    });
+    
+
+    
   }
+  
 
   cerrarSesion(): void {
     this.authService.logout();
