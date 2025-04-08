@@ -1,9 +1,15 @@
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
 .usuarios-container {
   display: flex;
   gap: 2rem;
   padding: 2rem;
 }
 
+/* =====================================
+   LISTA DE USUARIOS
+===================================== */
 .lista-usuarios {
   flex: 1;
   display: flex;
@@ -18,25 +24,29 @@
   background: white;
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Imagen del avatar */
 .avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
+/* Contenedor de la información del usuario */
 .info {
   flex-grow: 1;
 }
 
+/* Título pequeño para secciones como "Usuario", "Correo", etc. */
 .titulo {
   font-size: 0.85rem;
   color: gray;
   font-weight: bold;
 }
 
+/* Botones de editar/eliminar */
 .acciones button {
   background: none;
   border: none;
@@ -45,15 +55,19 @@
   margin-left: 0.5rem;
 }
 
+/* =====================================
+   PANEL LATERAL (Información adicional)
+===================================== */
 .info-lateral {
   width: 250px;
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: fit-content;
 }
 
+/* Título del botón para añadir nuevo usuario */
 .añadir-usuario {
   font-weight: bold;
   cursor: pointer;
@@ -62,11 +76,15 @@
   justify-content: space-between;
 }
 
+/* Contador de usuarios activos */
 .usuarios-activos {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
 
+/* =====================================
+   FORMULARIO PARA NUEVO USUARIO
+===================================== */
 .formulario-nuevo-usuario {
   margin-top: 1rem;
   display: flex;
@@ -91,21 +109,21 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
+    &:hover {
+      background-color: #45a049;
+    }
   }
 
-  button:hover {
-    background-color: #45a049;
-  }
-
-  .formulario-nuevo-usuario form {
+  /* Corrección para estructura interna del formulario */
+  form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espacio entre campos, puedes ajustarlo */
+    gap: 10px;
   }
-  
-  .formulario-nuevo-usuario label,
-  .formulario-nuevo-usuario input {
+
+  label,
+  input {
     width: 100%;
   }
-  
 }

@@ -1,42 +1,47 @@
+// Importa el token APP_BASE_HREF para definir la base de la aplicación
 import { APP_BASE_HREF } from '@angular/common';
+
+// Importa utilidades de SSR y verificación del módulo principal
 import { CommonEngine, isMainModule } from '@angular/ssr/node';
+
+// Importa Express para crear el servidor
 import express from 'express';
+
+// Funciones de manejo de rutas y archivos del sistema
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+// Importa la función bootstrap para renderizar Angular desde el servidor
 import bootstrap from './main.server';
 
+// Define la carpeta de distribución del servidor
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+
+// Define la carpeta de distribución del navegador (frontend compilado)
 const browserDistFolder = resolve(serverDistFolder, '../browser');
+
+// Ruta del archivo HTML que se usará para renderizar
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
+// Inicializa la aplicación Express
 const app = express();
+
+// Crea una instancia del motor SSR de Angular
 const commonEngine = new CommonEngine();
 
 /**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
-
-/**
- * Serve static files from /browser
+ * Servir archivos estáticos desde la carpeta /browser
  */
 app.get(
   '**',
   express.static(browserDistFolder, {
-    maxAge: '1y',
+    maxAge: '1y', // Cache por un año
     index: 'index.html'
   }),
 );
 
 /**
- * Handle all other requests by rendering the Angular application.
+ * Renderiza la aplicación Angular para todas las demás rutas
  */
 app.get('**', (req, res, next) => {
   const { protocol, originalUrl, baseUrl, headers } = req;
@@ -54,8 +59,8 @@ app.get('**', (req, res, next) => {
 });
 
 /**
- * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
+ * Inicia el servidor si este archivo es el punto de entrada principal.
+ * Escucha en el puerto especificado por la variable de entorno PORT, o 4000 por defecto.
  */
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;

@@ -1,41 +1,51 @@
 <div class="perfil-container">
     <h2>Mi Perfil</h2>
   
+    <!-- Vista de solo lectura (cuando no se está editando) -->
     <div *ngIf="!editando" class="perfil-info">
       <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
       <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
       <p><strong>Email:</strong> {{ usuario.email }}</p>
+  
       <div class="perfil-buttons">
+        <!-- Botón para activar el modo de edición -->
         <button (click)="activarEdicion()">Editar</button>
+  
+        <!-- Botón para cerrar sesión (dentro de un form POST) -->
         <form action="/logout" method="POST" style="display: inline;">
-            <button (click)="cerrarSesion()">Cerrar sesión</button>
-          </form>
+          <button (click)="cerrarSesion()">Cerrar sesión</button>
+        </form>
       </div>
     </div>
   
+    <!-- Vista de edición (cuando el usuario quiere editar su info) -->
     <div *ngIf="editando" class="perfil-edit">
+      
+      <!-- Campo para editar el nombre -->
       <label>Nombre:
         <input [(ngModel)]="usuario.nombre" />
       </label>
   
+      <!-- Campo para editar el apellido -->
       <label>Apellido:
         <input [(ngModel)]="usuario.apellido" />
       </label>
   
+      <!-- Campo para editar el email -->
       <label>Email:
         <input [(ngModel)]="usuario.email" />
       </label>
   
+      <!-- Campo para editar la contraseña -->
       <label>Contraseña:
         <input [(ngModel)]="usuario.password" type="password" />
       </label>
   
+      <!-- Botones para guardar cambios o cancelar -->
       <div class="perfil-buttons">
         <button (click)="guardarCambios()">Guardar</button>
         <button (click)="cancelarEdicion()">Cancelar</button>
       </div>
     </div>
   </div>
-  
-
   

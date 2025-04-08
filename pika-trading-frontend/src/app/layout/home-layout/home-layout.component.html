@@ -1,42 +1,57 @@
-  <header [ngClass]="{ 'header-cartas': isCartas }" class="main-header">
-    <h1>🌟 Pika Trading - Adquiere las cartas que buscas 🌟</h1>
-    <nav>
-      <ul>
+<!-- Encabezado principal, cambia de clase si estamos en la vista de 'cartas' -->
+<header [ngClass]="{ 'header-cartas': isCartas }" class="main-header">
+  <h1>🌟 Pika Trading - Adquiere las cartas que buscas 🌟</h1>
+  <nav>
+    <ul>
 
-        <!-- Bloque logico del nav barr para admin-->
-        <li *ngIf="rol === 'admin'"><a routerLink="/admin">Lista usuarios</a></li>
-        <li *ngIf="rol === 'admin'"><a routerLink="/pedidos">Pedidos</a></li>
-        <li *ngIf="rol === 'admin'"><a routerLink="/admin/estadisticas">📊 Estadísticas</a></li>
-        <!-- Fin bloque logico del nav barr para admin-->
-        <li><a routerLink="/home">Inicio</a></li>
-        <li><a routerLink="/cartas">Cartas</a></li>
-        <li><a routerLink="/sobres">Sobres</a></li>
-        <li *ngIf="rol === 'usuario'"><a routerLink="/perfil-usuario">👤 Perfil</a></li>
+      <!-- Bloque lógico del navbar solo visible para administradores -->
+      <li *ngIf="rol === 'admin'"><a routerLink="/admin">Lista usuarios</a></li>
+      <li *ngIf="rol === 'admin'"><a routerLink="/pedidos">Pedidos</a></li>
+      <li *ngIf="rol === 'admin'"><a routerLink="/admin/estadisticas">📊 Estadísticas</a></li>
+      <!-- Fin del bloque lógico para admin -->
 
-        <li>
-          <a routerLink="/carrito">
-            🛒 Carrito ({{ totalItems }})
-          </a>
-        </li>        
-        <li class="session-btn" *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
-        <li class="session-btn" *ngIf="rol === 'admin'"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <!-- Aquí se renderiza el contenido dinámico -->
-  <router-outlet></router-outlet>
-  
-  <footer>
-    <div class="footer-content">
+      <!-- Enlaces visibles para todos los usuarios -->
+      <li><a routerLink="/home">Inicio</a></li>
+      <li><a routerLink="/cartas">Cartas</a></li>
+      <li><a routerLink="/sobres">Sobres</a></li>
+
+      <!-- Enlace al perfil solo visible para usuarios con rol 'usuario' -->
+      <li *ngIf="rol === 'usuario'"><a routerLink="/perfil-usuario">👤 Perfil</a></li>
+
+      <!-- Carrito con contador de ítems -->
+      <li>
+        <a routerLink="/carrito">
+          🛒 Carrito ({{ totalItems }})
+        </a>
+      </li>
+
+      <!-- Botones de sesión -->
+      <li class="session-btn" *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
+      <li class="session-btn" *ngIf="rol === 'admin'"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Aquí se carga dinámicamente el contenido de cada ruta -->
+<router-outlet></router-outlet>
+
+<!-- Pie de página con enlaces e íconos sociales -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-left">
       <p>Pika Trading</p>
       <div class="social-icons">
-        <!-- Agrega iconos aquí -->
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
-      <ul>
-        <li><a routerLink="/sobre-nosotros">Quiénes somos</a></li>
-        <li><a href="/sobre-nosotros">Contáctanos</a></li>
-        <li><a href="#">FQA</a></li>
-      </ul>
     </div>
-  </footer>
+
+    <ul class="footer-links">
+      <li><a routerLink="/sobre-nosotros">Quiénes somos</a></li>
+      <li><a href="/sobre-nosotros">Contáctanos</a></li>
+      <li><a href="#">FQA</a></li>
+    </ul>
+  </div>
+</footer>

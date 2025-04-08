@@ -1,14 +1,15 @@
+// Importaciones necesarias de Angular y otros módulos
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
-//import { routes } from './app.routes';
+// import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component'; // Componente login
-import { RegistroComponent } from './registro/registro.component'; //Componente registro
+import { RegistroComponent } from './registro/registro.component'; // Componente registro
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component'; // Componente recuperar contraseña
-//import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component'; // Componente sobre nosotros
+// import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component'; // Componente sobre nosotros
 import { CartasComponent } from './pages/cartas/cartas.component'; // Componente cartas
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar formularios en Angular
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
@@ -19,10 +20,10 @@ import { PLATFORM_ID, Inject } from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,// Se agrega el componente nuevo login
+    LoginComponent,                          // Se agrega el componente nuevo login
     HomeComponent,
-    RegistroComponent, // se agrega el componente nuevo registro
-    RecuperarContrasenaComponent, //Se agrega el componente nuevo recuperar contraseña
+    RegistroComponent,                       // Se agrega el componente nuevo registro
+    RecuperarContrasenaComponent,            // Se agrega el componente nuevo recuperar contraseña
     CartasComponent,
     UsuariosAdminComponent,
   ],
@@ -38,10 +39,11 @@ import { PLATFORM_ID, Inject } from '@angular/core';
 })
 export class AppModule {
 
+  // Constructor para verificar si se está ejecutando en el navegador
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   isBrowser(): boolean {
     return isPlatformBrowser(this.platformId);
   }
 
- }
+}

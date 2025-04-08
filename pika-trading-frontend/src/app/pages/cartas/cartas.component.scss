@@ -1,157 +1,161 @@
+// Banner superior con imagen de fondo
 .banner {
   width: 100%;
   height: 47vh;
   background-image: url('/assets/banner-cartas.jpeg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
-  align-items: center;
-  color: white;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-    h1 {
-      font-size: 2.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-    }
+  color: white;
+
+  h1 {
+    font-size: 2.5rem;
   }
 
-
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: 100%;
+  p {
+    font-size: 1.2rem;
   }
+}
 
+// Reset de márgenes y scroll horizontal
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
 
-  .cartas-container {
-    background-color: #f5deb3;
-    padding: 20px;
-    text-align: center;
-    
-    .cartas-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      justify-items: center;
-      
-      .carta {
-        background: white;
-        padding: 10px;
+// Contenedor principal de cartas
+.cartas-container {
+  background-color: #f5deb3; // Color tipo "trigo"
+  padding: 20px;
+  text-align: center;
+
+  // Grid de cartas
+  .cartas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // Cuatro columnas
+    gap: 20px;
+    justify-items: center;
+
+    // Cada carta individual
+    .carta {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width: 100%;
         border-radius: 10px;
-        text-align: center;
-        transition: transform 0.2s ease;
-        &:hover {
-          transform: scale(1.02);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        img {
-          width: 100%;
-          border-radius: 10px;
-        }
-  
+      }
+
+      button {
+        background: #000;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      // Selector de cantidad
+      .cantidad-selector {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+
         button {
-          background: #000;
-          color: white;
+          background-color: #ffcc00;
+          color: #000;
+          font-weight: bold;
           border: none;
-          padding: 10px;
-          cursor: pointer;
+          padding: 5px 10px;
+          font-size: 18px;
           border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #e6b800;
+          }
+
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: bold;
+          min-width: 24px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Adaptación responsiva para móviles
+@media (max-width: 768px) {
+  .cartas-container {
+    padding: 8px;
+
+    .cartas-grid {
+      grid-template-columns: repeat(2, 1fr); // Solo 2 por fila
+      gap: 10px;
+
+      .carta {
+        padding: 8px;
+        max-width: 150px;
+        font-size: 14px;
+
+        img {
+          max-width: 100px;
+        }
+
+        h3 {
+          font-size: 14px;
+          margin: 5px 0;
+        }
+
+        p {
+          font-size: 13px;
+          margin: 5px 0;
         }
 
         .cantidad-selector {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          margin: 10px 0;
-        
-          button {
-            background-color: #ffcc00;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            padding: 5px 10px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        
-            &:hover {
-              background-color: #e6b800;
-            }
-            &:disabled {
-              opacity: 0.5; /* Hace que el botón deshabilitado se vea más claro */
-              cursor: not-allowed;
-            }
-          }
-        
-          span {
-            font-size: 14px;
-            font-weight: bold;
-            min-width: 24px;
-            text-align: center;
-          }
-        }
-        
-      }
-    }
-  }
+          gap: 5px;
 
-  @media (max-width: 768px) {
-    .cartas-container {
-      padding: 8px;
-  
-      .cartas-grid {
-        grid-template-columns: repeat(2, 1fr); // Dos cartas por fila
-        gap: 10px; // Reduce el espacio entre cartas
-  
-        .carta {
-          padding: 8px; // Reduce el padding interno
-          max-width: 150px; // Limita el tamaño en pantallas pequeñas
-          font-size: 14px; // Reduce tamaño del texto
-          
-          img {
-            max-width: 100px; // Reduce el tamaño de la imagen
-          }
-  
-          h3 {
-            font-size: 14px; // Ajusta tamaño del nombre de la carta
-            margin: 5px 0;
-          }
-  
-          p {
-            font-size: 13px; // Reduce tamaño del precio
-            margin: 5px 0;
-          }
-  
-          .cantidad-selector {
-            gap: 5px;
-  
-            button {
-              padding: 3px 6px;
-              font-size: 14px;
-            }
-  
-            span {
-              font-size: 13px;
-            }
-          }
-  
           button {
-            padding: 5px;
+            padding: 3px 6px;
             font-size: 14px;
           }
+
+          span {
+            font-size: 13px;
+          }
+        }
+
+        button {
+          padding: 5px;
+          font-size: 14px;
         }
       }
     }
   }
-  
-  
+}

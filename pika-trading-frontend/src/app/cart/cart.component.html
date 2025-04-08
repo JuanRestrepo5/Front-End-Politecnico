@@ -1,28 +1,45 @@
+<!-- Si el carrito tiene productos, mostramos el contenido -->
 <ng-container *ngIf="carrito.length > 0; else vacio">
-<div class="carrito-container" *ngIf="carrito.length > 0; else vacio">
-  <h2 class="titulo-carrito">Tu carrito de compras</h2>
+  <div class="carrito-container">
+    
+    <!-- Título del carrito -->
+    <h2 class="titulo-carrito">Tu carrito de compras</h2>
 
-  <div class="carrito-item" *ngFor="let item of carrito">
-    <img [src]="item.imagen" alt="Carta" class="imagen-carta">
-    <div class="info-carta">
-      <h3>{{ item.nombre }}</h3>
-      <p>Precio: ${{ item.precio }}</p>
-      <div class="cantidad-control">
-        <button (click)="disminuirCantidad(item)">−</button>
-        <span>{{ item.cantidad }}</span>
-        <button (click)="aumentarCantidad(item)">+</button>
+    <!-- Lista de productos en el carrito -->
+    <div class="carrito-item" *ngFor="let item of carrito">
+      
+      <!-- Imagen de la carta -->
+      <img [src]="item.imagen" alt="Carta" class="imagen-carta">
+
+      <!-- Información de la carta -->
+      <div class="info-carta">
+        <h3>{{ item.nombre }}</h3>
+        <p>Precio: ${{ item.precio }}</p>
+
+        <!-- Controles para cambiar la cantidad -->
+        <div class="cantidad-control">
+          <button (click)="disminuirCantidad(item)">−</button>
+          <span>{{ item.cantidad }}</span>
+          <button (click)="aumentarCantidad(item)">+</button>
+        </div>
       </div>
-    </div>
-    <button class="btn-eliminar" (click)="eliminarDelCarrito(item)">Eliminar</button>
-  </div>
 
-  <div class="carrito-footer">
-    <h3>Total: {{ total | currency:'USD':'symbol':'1.0-0' }}</h3>
-    <button class="btn-vaciar" (click)="vaciarCarrito()">Vaciar carrito</button>
+      <!-- Botón para eliminar el producto del carrito -->
+      <button class="btn-eliminar" (click)="eliminarDelCarrito(item)">
+        Eliminar
+      </button>
+    </div>
+
+    <!-- Footer del carrito con total y botón para vaciar -->
+    <div class="carrito-footer">
+      <h3>Total: {{ total | currency:'USD':'symbol':'1.0-0' }}</h3>
+      <button class="btn-vaciar" (click)="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+
   </div>
-</div>
 </ng-container>
 
+<!-- Plantilla alternativa si el carrito está vacío -->
 <ng-template #vacio>
   <h2>Tu carrito está vacío</h2>
 </ng-template>

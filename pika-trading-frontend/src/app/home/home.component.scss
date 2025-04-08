@@ -1,45 +1,53 @@
+// Estilo global del body
 body {
-    font-family: Arial, sans-serif;
-    background: #f4e1c5;
-    margin: 0;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    background: #d4a373;
-    padding: 15px;
-    align-items: center;
-  }
-  
-  .navbar nav a {
-    //margin: 0 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 40px;
-  }
-  
-  .hero img {
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .products {
-    padding: 20px;
-  }
-  
-  .grid {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .card {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
+  font-family: Arial, sans-serif;
+  background: #f4e1c5;
+  margin: 0;
+}
+
+// Barra de navegación superior
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #d4a373;
+  padding: 15px;
+  align-items: center;
+}
+
+// Enlaces dentro del nav
+.navbar nav a {
+  // Espaciado entre enlaces (comentado originalmente)
+  // margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+
+// Sección principal (hero/banner)
+.hero {
+  text-align: center;
+  padding: 40px;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 600px;
+}
+
+// Contenedor de productos
+.products {
+  padding: 20px;
+}
+
+// Grid de productos
+.grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+// Estilo de las tarjetas individuales
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}

@@ -1,87 +1,87 @@
 .about-container {
-  padding: 40px;
-  background-color: #f0d29e;
-  color: #000;
+  padding: 40px; // Espaciado interno general del contenedor
+  background-color: #f0d29e; // Color de fondo estilo crema claro
+  color: #000; // Color de texto principal
 
   h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.5rem; // Tamaño grande para el título principal
+    font-weight: bold; // Negrita
   }
 
   h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem; // Tamaño medio para subtítulos
+    margin-bottom: 10px; // Separación inferior
   }
 
   p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 600px;
+    font-size: 1.2rem; // Tamaño legible para párrafos
+    line-height: 1.6; // Espaciado entre líneas para mejor lectura
+    max-width: 600px; // Limita el ancho para no extenderse demasiado
   }
 
   .about-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    margin-top: 20px;
+    display: flex; // Diseño en dos columnas (texto e imagen)
+    justify-content: space-between; // Espacio entre columnas
+    align-items: center; // Centra verticalmente
+    gap: 50px; // Espacio entre texto e imagen
+    margin-top: 20px; // Separación desde el contenido superior
   }
 
   .about-text {
-    flex: 1;
+    flex: 1; // Toma la mitad del ancho disponible
   }
 
   .about-image {
-    flex: 1;
+    flex: 1; // También toma la mitad del ancho
     display: flex;
-    justify-content: center;
+    justify-content: center; // Centra horizontalmente la imagen
 
     img {
-      max-width: 550px; // Aume ntado el tamaño máximo
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      max-width: 550px; // Tamaño máximo permitido
+      width: 100%; // Que se ajuste al contenedor
+      height: auto; // Mantiene proporciones
+      border-radius: 10px; // Esquinas redondeadas
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); // Sombra para dar profundidad
     }
   }
 
   form {
     display: flex;
-    flex-direction: column;
-    max-width: 500px;
+    flex-direction: column; // Campos en columna
+    max-width: 500px; // Ancho máximo del formulario
 
     label {
-      font-weight: bold;
-      margin-top: 10px;
+      font-weight: bold; // Etiquetas en negrita
+      margin-top: 10px; // Separación superior entre campos
     }
 
     input,
     textarea {
-      padding: 10px;
-      font-size: 1rem;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      width: 100%;
+      padding: 10px; // Relleno interno
+      font-size: 1rem; // Tamaño del texto
+      margin-top: 5px; // Separación superior del campo respecto a la etiqueta
+      border-radius: 5px; // Esquinas redondeadas
+      border: 1px solid #ccc; // Borde gris claro
+      width: 100%; // Que ocupe todo el ancho del formulario
     }
 
     textarea {
-      height: 100px;
-      resize: none;
+      height: 100px; // Altura fija del área de texto
+      resize: none; // Evita que el usuario cambie el tamaño
     }
 
     button {
       margin-top: 15px;
       padding: 10px;
-      background-color: black;
-      color: white;
+      background-color: black; // Fondo negro
+      color: white; // Texto blanco
       border: none;
-      cursor: pointer;
+      cursor: pointer; // Cambia el cursor al pasar encima
       font-size: 1rem;
       border-radius: 5px;
 
       &:hover {
-        background-color: #333;
+        background-color: #333; // Fondo más claro al pasar el mouse
       }
     }
   }

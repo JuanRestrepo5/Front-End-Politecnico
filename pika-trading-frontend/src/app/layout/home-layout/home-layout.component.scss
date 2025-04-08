@@ -1,48 +1,104 @@
+/* Estilo principal del componente */
 :host {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
-
-  .header-cartas {
-    width: 100%;
-    position: absolute;
-    background: transparent;
-    color: white;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between; /* Alinea el logo/título a la izquierda y el nav a la derecha */
-    align-items: center;
-    padding: 15px 50px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Ocupa toda la altura de la ventana
 }
 
+/* El main se expandirá para llenar el espacio entre header y footer */
+main {
+  flex: 1;
+}
+
+/* Estilo del encabezado cuando se aplica la clase 'header-cartas' */
+.header-cartas {
+  width: 100%;
+  position: absolute;
+  background: transparent;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; // Alinea el título a la izquierda y el nav a la derecha
+  align-items: center;
+  padding: 15px 50px;
+  box-sizing: border-box;
+}
+
+/* Navegación dentro del header con distribución en línea */
 .header-cartas nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Estilo de los enlaces dentro de la navegación del header */
 .header-cartas nav ul li a {
   background: transparent;
-  padding: 5px 10px; /* Ajustar si es necesario */
-  min-width: 80px; /* Asegura que todos tengan el mismo tamaño */
+  padding: 5px 10px;          // Espaciado interior del botón
+  min-width: 80px;            // Asegura tamaño uniforme entre botones
   text-align: center;
   height: 40px;
 }
 
+/* Footer general */
+footer {
+  background-color: #d49e52;
+  padding: 1rem;
+  color: black;
+}
 
+/* Contenido del footer en layout flexible */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; // Permite que los elementos se acomoden en pantallas pequeñas
+}
 
+/* Sección izquierda del footer */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+/* Contenedor de iconos sociales */
+.social-icons {
+  margin-top: 0.5rem;
+}
 
+/* Estilos generales para los iconos sociales */
+.social-icons a {
+  color: black;
+  margin-right: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
 
+/* Efecto hover en los iconos sociales */
+.social-icons a:hover {
+  color: #fff;
+}
 
+/* Lista de enlaces en el footer (lado derecho) */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
 
+/* Separación entre los enlaces */
+.footer-links li {
+  margin-bottom: 5px;
+}
 
+/* Estilos de los enlaces del footer */
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
 
-  
-  
+/* Efecto hover sobre los enlaces del footer */
+.footer-links a:hover {
+  text-decoration: underline;
+}

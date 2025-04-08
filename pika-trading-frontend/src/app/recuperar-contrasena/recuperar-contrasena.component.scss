@@ -1,46 +1,52 @@
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-  }
-  
-  button {
-    background: black;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  a {
-    display: block;
-    margin-top: 15px;
-    color: blue;
-    text-decoration: none;
-  }
-  
+  // Contenedor centrado con ancho máximo
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  // Título principal: tamaño grande y en negrita
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p {
+  // Texto descriptivo del proceso
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+form {
+  // El formulario se organiza en columna con espacios
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  // Estilos del campo de texto
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  // Botón de envío
+  background: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  // Enlace para redirigir al registro
+  display: block;
+  margin-top: 15px;
+  color: blue;
+  text-decoration: none;
+}

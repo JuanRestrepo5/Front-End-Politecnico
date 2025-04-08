@@ -1,55 +1,65 @@
+// Contenedor principal del formulario de registro
 .registro-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f5d7a5;
-    border-radius: 8px;
-    text-align: center;
-}
-
-h2 {
-    color: #4a2d0f;
-}
-
-.input-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.input-box {
-    width: 48%;
-}
-
-label {
-    display: block;
-    text-align: left;
-    margin: 10px 0 5px;
-    color: #4a2d0f;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-.login-link {
-    margin-top: 15px;
-}
-
-.login-link a {
-    color: blue;
-    text-decoration: none;
-}
+    max-width: 500px; // Ancho máximo del formulario
+    margin: 50px auto; // Centrado vertical y horizontal
+    padding: 20px; // Espaciado interno
+    background-color: #f5d7a5; // Color de fondo cálido
+    border-radius: 8px; // Bordes redondeados
+    text-align: center; // Alineación del contenido centrada
+  }
+  
+  // Estilo del título
+  h2 {
+    color: #4a2d0f; // Color marrón oscuro para destacar el título
+  }
+  
+  // Agrupación de inputs para disposición horizontal
+  .input-group {
+    display: flex; // Flexbox para alineación en fila
+    justify-content: space-between; // Espacio entre los inputs
+  }
+  
+  // Caja individual de cada input dentro del grupo
+  .input-box {
+    width: 48%; // Para que dos cajas quepan una al lado de la otra
+  }
+  
+  // Estilos generales para etiquetas de los inputs
+  label {
+    display: block; // Que ocupe toda la línea
+    text-align: left; // Alineación izquierda para claridad
+    margin: 10px 0 5px; // Espaciado arriba y abajo
+    color: #4a2d0f; // Color consistente con el título
+  }
+  
+  // Estilos comunes para todos los inputs
+  input {
+    width: 100%; // Que ocupen todo el ancho del contenedor
+    padding: 8px; // Espaciado interno
+    border: 1px solid #ccc; // Borde gris claro
+    border-radius: 4px; // Bordes ligeramente redondeados
+  }
+  
+  // Estilo del botón de registro
+  button {
+    width: 100%; // Que ocupe todo el ancho del contenedor
+    padding: 10px; // Espaciado interno
+    background-color: black; // Fondo negro
+    color: white; // Texto blanco para contraste
+    border: none; // Sin borde
+    border-radius: 4px; // Bordes redondeados
+    margin-top: 15px; // Espaciado superior
+    cursor: pointer; // Cambia a mano al pasar el cursor
+  }
+  
+  // Contenedor del texto y enlace para iniciar sesión
+  .login-link {
+    margin-top: 15px; // Espaciado respecto al botón
+  }
+  
+  // Estilo para el enlace dentro de login-link
+  .login-link a {
+    color: blue; // Color azul tradicional de enlace
+    text-decoration: none; // Sin subrayado
+  }
+  

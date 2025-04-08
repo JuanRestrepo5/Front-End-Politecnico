@@ -4,10 +4,10 @@ body {
     background-color: #f0d7a5; /* Color de fondo */
     margin: 0;
     padding: 0;
-}
-
-/* Contenedor del login */
-.login-container {
+  }
+  
+  /* Contenedor del login */
+  .login-container {
     width: 400px;
     margin: 50px auto;
     padding: 30px;
@@ -15,32 +15,32 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-/* Título */
-h1 {
+  }
+  
+  /* Título */
+  h1 {
     font-size: 24px;
     color: #3d2c1e;
-}
-
-/* Campos de entrada */
-label {
+  }
+  
+  /* Campos de entrada */
+  label {
     display: block;
     text-align: left;
     margin: 10px 0 5px;
     font-weight: bold;
-}
-
-input {
+  }
+  
+  input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-/* Botón de inicio de sesión */
-button {
+  }
+  
+  /* Botón de inicio de sesión */
+  button {
     width: 100%;
     padding: 10px;
     background-color: black;
@@ -48,36 +48,38 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #333;
-}
-
-/* Enlaces */
-.links {
+  }
+  
+  /* Enlaces de recuperación y registro */
+  .links {
     margin-top: 15px;
-}
-
-.links a {
+  }
+  
+  .links a {
     display: block;
     color: blue;
     text-decoration: none;
     margin-top: 5px;
-}
-
-.links a:hover {
+  }
+  
+  .links a:hover {
     text-decoration: underline;
-}
-
-:host {
+  }
+  
+  /* Estilo del host para centrar el contenido vertical y horizontalmente */
+  :host {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; // ocupa toda la altura de la pantalla
     width: 100%;
   }
-
+  
+  /* Mensaje de error */
   .error-message {
     color: red;
     font-weight: bold;

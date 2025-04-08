@@ -1,29 +1,34 @@
+// Contenedor principal del perfil de usuario
 .perfil-container {
-    background-color: #fff8e1;
+    background-color: #fff8e1; // Color crema claro
     padding: 30px;
     border-radius: 10px;
     width: 350px;
     margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
     font-family: Arial, sans-serif;
   }
   
+  // Estilo del título
   .perfil-container h2 {
     margin-bottom: 20px;
-    color: #4e342e;
+    color: #4e342e; // Marrón oscuro
   }
   
+  // Estilos de los datos del perfil en vista normal
   .perfil-info p {
     margin: 10px 0;
     font-size: 16px;
   }
   
+  // Estilo para los nombres de los campos (ej. "Nombre:")
   .perfil-info p strong {
     display: inline-block;
     width: 90px;
     color: #6d4c41;
   }
   
+  // Etiquetas de los inputs en modo edición
   .perfil-edit label {
     display: block;
     margin-bottom: 10px;
@@ -31,6 +36,7 @@
     color: #5d4037;
   }
   
+  // Inputs de edición
   .perfil-edit input {
     width: 100%;
     padding: 8px;
@@ -40,23 +46,26 @@
     box-sizing: border-box;
   }
   
+  // Contenedor de botones (editar, guardar, etc.)
   .perfil-buttons {
     margin-top: 20px;
   }
   
+  // Botones del perfil
   .perfil-buttons button {
     padding: 8px 14px;
     margin-right: 10px;
-    background-color: #fdd835;
+    background-color: #fdd835; // Amarillo vibrante
     border: none;
     border-radius: 5px;
     font-weight: bold;
-    color: #3e2723;
+    color: #3e2723; // Marrón oscuro
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
+  // Hover de los botones
   .perfil-buttons button:hover {
-    background-color: #fbc02d;
+    background-color: #fbc02d; // Tono más oscuro al pasar el mouse
   }
   
