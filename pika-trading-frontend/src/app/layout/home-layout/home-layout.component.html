@@ -6,7 +6,7 @@
         <!-- Bloque logico del nav barr para admin-->
         <li *ngIf="rol === 'admin'"><a routerLink="/admin">Lista usuarios</a></li>
         <li *ngIf="rol === 'admin'"><a routerLink="/pedidos">Pedidos</a></li>
-        <li *ngIf="rol === 'admin'"><a routerLink="/estadisticas">Estadísticas</a></li>
+        <li *ngIf="rol === 'admin'"><a routerLink="/admin/estadisticas">📊 Estadísticas</a></li>
         <!-- Fin bloque logico del nav barr para admin-->
         <li><a routerLink="/home">Inicio</a></li>
         <li><a routerLink="/cartas">Cartas</a></li>
@@ -18,8 +18,8 @@
             🛒 Carrito ({{ totalItems }})
           </a>
         </li>        
-        <li *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
-        <li *ngIf="rol === 'admin'"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
+        <li class="session-btn" *ngIf="!usuarioLogueado"><a routerLink="/login">Iniciar sesión</a></li>
+        <li class="session-btn" *ngIf="rol === 'admin'"><a (click)="cerrarSesion()">Cerrar sesión</a></li>
       </ul>
     </nav>
   </header>

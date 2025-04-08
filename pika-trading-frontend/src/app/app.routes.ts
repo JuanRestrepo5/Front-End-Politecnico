@@ -10,6 +10,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
 import { CartComponent } from './cart/cart.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { EstadisticasComponent } from './admin/estadisticas/estadisticas.component';
 
 
 export const routes: Routes = [ 
@@ -25,7 +26,8 @@ export const routes: Routes = [
           { path: 'sobre-nosotros', component: SobreNosotrosComponent},
           { path: 'cartas', component: CartasComponent },
           { path: 'carrito', component: CartComponent },
-          { path: 'perfil-usuario', component: PerfilUsuarioComponent}
+          { path: 'perfil-usuario', component: PerfilUsuarioComponent},
+          { path: 'admin/estadisticas', component: EstadisticasComponent }
         ] },
 ];
 

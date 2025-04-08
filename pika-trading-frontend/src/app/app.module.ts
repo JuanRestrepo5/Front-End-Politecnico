@@ -13,6 +13,8 @@ import { CartasComponent } from './pages/cartas/cartas.component'; // Componente
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar formularios en Angular
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
 import { NgChartsModule } from 'ng2-charts'; // Importar ChartsModule para usar gráficos de ng2-charts
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -34,4 +36,12 @@ import { NgChartsModule } from 'ng2-charts'; // Importar ChartsModule para usar 
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
+  }
+
+ }

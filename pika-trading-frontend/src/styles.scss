@@ -79,7 +79,7 @@ header {
       }
 
       /* Ajuste para "Iniciar sesión" */
-      li:last-child {
+      li.session-btn {
         a {
           background-color: black;
           color: white;

@@ -1,0 +1,40 @@
+<div class="estadisticas-container">
+    <h2>Estadísticas</h2>
+  
+    <div class="stats-boxes">
+      <div class="box">
+        <h3>Ventas Totales</h3>
+        <p>{{ ventasTotales | currency }}</p>
+      </div>
+      <div class="box">
+        <h3>Visitantes</h3>
+        <p>{{ visitantes }}</p>
+      </div>
+      <div class="box">
+        <h3>Pedidos Activos</h3>
+        <p>{{ pedidosActivos }}</p>
+      </div>
+    </div>
+  
+    <div class="charts" *ngIf="isBrowser()">
+      <div class="chart chart-pie">
+        <h3>Ventas por categoría</h3>
+        <canvas baseChart
+          width="250"
+          height="250"
+          [data]="pieChartData"
+          [type]="pieChartType">
+        </canvas>
+      </div>
+  
+      <div class="chart">
+        <h3>Ventas mensuales</h3>
+        <canvas baseChart
+          [data]="lineChartData"
+          [options]="lineChartOptions"
+          [type]="'line'">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  
