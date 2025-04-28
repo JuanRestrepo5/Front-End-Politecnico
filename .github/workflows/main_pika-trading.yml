@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - Pika-trading
+name: Build and deploy Node.js + Angular app to Azure Web App - pika-trading-app
 
 on:
   push:
@@ -13,30 +10,52 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Node.js version
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
 
-      - name: npm install, build, and test
+      - name: Install backend dependencies
         run: |
+          cd pika-trading-backend
           npm install
-          npm run build --if-present
-          npm run test --if-present
+
+      - name: Install frontend dependencies
+        run: |
+          cd pika-trading-frontend
+          npm install
+
+      - name: Install Angular CLI
+        run: |
+          cd pika-trading-frontend
+          npm install @angular/cli
+
+      - name: Build Angular frontend
+        run: |
+          cd pika-trading-frontend
+          npx ng build --configuration production
+
+
+      - name: Move frontend build to backend
+        run: |
+          mkdir -p pika-trading-backend/dist/pika-trading-frontend/browser
+          cp -r pika-trading-frontend/dist/pika-trading-frontend/browser/* pika-trading-backend/dist/pika-trading-frontend/browser/
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          cd pika-trading-backend
+          zip -r release.zip server.js package.json package-lock.json dist/ data/
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: release.zip
+          name: node-angular-app
+          path: pika-trading-backend/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,30 +64,29 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: node-app
+          name: node-angular-app
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3E8F665B06CF4134B2598EF9F7ABB63F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D5075471F73B44D8AC11246E3F0F6463 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EA40FB618E1E4195BC85E84C45C879F4 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F885B893B2294667A7F7F7736151E97A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CD426CC5F610471F8DCA0BC46AFABAE4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AAD76A6331AD488FAF52073FF0889BEC }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'Pika-trading'
+          app-name: 'pika-trading-app'
           slot-name: 'Production'
           package: .
-          
