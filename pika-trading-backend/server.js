@@ -19,18 +19,6 @@ app.get("/products", (req, res) => {
   ]);
 });
 
-app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
-
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
-});
-
-const PORT = process.env.PORT || 8080;
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
-
 // Cargar usuarios desde JSON
 function getUsuarios() {
   const data = fs.readFileSync('./data/usuarios.json');
@@ -98,4 +86,16 @@ app.put('/usuarios/:id', (req, res) => {
   } else {
     res.status(404).json({ mensaje: 'Usuario no encontrado' });
   }
+});
+
+app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
+});
+
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
