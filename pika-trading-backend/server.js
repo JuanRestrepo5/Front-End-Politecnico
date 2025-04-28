@@ -84,12 +84,22 @@ function guardarUsuarios(usuarios) {
 
 // ----------------- FRONTEND -------------------
 
+console.log('Verificando dist path:', indexPath);
+console.log('¿Existe index.html?', fs.existsSync(indexPath));
+
 app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
 // Si no encontró nada en la API ni archivos estáticos => manda el index.html
+const indexPath = path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html');
+
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).send('Index file not found');
+  }
 });
+
 
 // ----------------- SERVER ---------------------
 
