@@ -3,7 +3,7 @@ name: Build and deploy Node.js + Angular app to Azure Web App - pika-trading-app
 on:
   push:
     branches:
-      - main  # Ajusta si tu rama principal se llama diferente
+      - main
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,9 @@ jobs:
           node-version: '20.x'
 
       - name: Install backend dependencies
-        run: npm install
+        run: |
+          cd pika-trading-backend
+          npm install
 
       - name: Build Angular frontend
         run: |
@@ -32,17 +34,19 @@ jobs:
 
       - name: Move frontend build to backend
         run: |
-          mkdir -p dist/pika-trading-frontend/browser
-          cp -r pika-trading-frontend/dist/pika-trading-frontend/browser/* dist/pika-trading-frontend/browser/
+          mkdir -p pika-trading-backend/dist/pika-trading-frontend/browser
+          cp -r pika-trading-frontend/dist/pika-trading-frontend/browser/* pika-trading-backend/dist/pika-trading-frontend/browser/
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip server.js package.json package-lock.json dist/ data/
+        run: |
+          cd pika-trading-backend
+          zip -r release.zip server.js package.json package-lock.json dist/ data/
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-angular-app
-          path: release.zip
+          path: pika-trading-backend/release.zip
 
   deploy:
     runs-on: ubuntu-latest
