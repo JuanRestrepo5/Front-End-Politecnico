@@ -90,7 +90,11 @@ app.put('/usuarios/:id', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
-app.get('*', (req, res) => {
+app.get('/*', function (req, res, next) {
+  if (req.originalUrl.startsWith('/api')) {
+    // Si quieres excluir tus rutas de API (opcional)
+    return next();
+  }
   res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
 });
 
