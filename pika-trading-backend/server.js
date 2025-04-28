@@ -7,16 +7,28 @@ const path = require('path');
 app.use(cors());
 app.use(express.json());
 
-// Sirve archivos estáticos (Angular)
-app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
+app.get("/", (req, res) => {
+  res.send("¡Bienvenido a Pika Trading API!");
+});
 
-// --- Tus rutas API ---
 app.get("/products", (req, res) => {
   res.json([
     { id: 1, name: "Cartas", description: "Cartas individuales" },
     { id: 2, name: "Sobres", description: "Sobres con cartas aleatorias" },
     { id: 3, name: "Decks", description: "Decks completos para torneos" }
   ]);
+});
+
+app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
+});
+
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(Servidor corriendo en el puerto ${PORT});
 });
 
 // Cargar usuarios desde JSON
@@ -86,15 +98,3 @@ app.put('/usuarios/:id', (req, res) => {
   } else {
     res.status(404).json({ mensaje: 'Usuario no encontrado' });
   }
-});
-
-// --- Catch-all: redirige cualquier otra ruta al frontend ---
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
-});
-
-const PORT = process.env.PORT || 8080;
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
