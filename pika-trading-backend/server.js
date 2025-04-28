@@ -90,7 +90,7 @@ app.put('/usuarios/:id', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
-app.use((req, res, next) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
 });
 
