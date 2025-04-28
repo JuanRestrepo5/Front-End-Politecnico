@@ -87,6 +87,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'pika-trading-app'
+          app-name: 'Pika-trading'
           slot-name: 'Production'
           package: .
