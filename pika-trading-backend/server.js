@@ -7,11 +7,9 @@ const path = require('path');
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("¡Bienvenido a Pika Trading API!");
-});
+// ------------------- API ----------------------
 
-app.get("/products", (req, res) => {
+app.get("/api/products", (req, res) => {
   res.json([
     { id: 1, name: "Cartas", description: "Cartas individuales" },
     { id: 2, name: "Sobres", description: "Sobres con cartas aleatorias" },
@@ -19,12 +17,11 @@ app.get("/products", (req, res) => {
   ]);
 });
 
-// Login
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const usuarios = getUsuarios();
   const usuario = usuarios.find(u => u.email === email && u.password === password);
-  
+
   if (usuario) {
     res.json(usuario);
   } else {
@@ -32,8 +29,7 @@ app.post('/login', (req, res) => {
   }
 });
 
-// Registro
-app.post('/registro', (req, res) => {
+app.post('/api/registro', (req, res) => {
   const usuarios = getUsuarios();
   const nuevoUsuario = req.body;
   const existe = usuarios.find(u => u.email === nuevoUsuario.email);
@@ -49,14 +45,12 @@ app.post('/registro', (req, res) => {
   res.status(201).json(nuevoUsuario);
 });
 
-// Obtener todos (admin)
-app.get('/usuarios', (req, res) => {
+app.get('/api/usuarios', (req, res) => {
   const usuarios = getUsuarios();
   res.json(usuarios);
 });
 
-// Eliminar usuario
-app.delete('/usuarios/:id', (req, res) => {
+app.delete('/api/usuarios/:id', (req, res) => {
   let usuarios = getUsuarios();
   const id = parseInt(req.params.id);
   usuarios = usuarios.filter(u => u.id !== id);
@@ -64,8 +58,7 @@ app.delete('/usuarios/:id', (req, res) => {
   res.json({ mensaje: 'Usuario eliminado' });
 });
 
-// Editar usuario
-app.put('/usuarios/:id', (req, res) => {
+app.put('/api/usuarios/:id', (req, res) => {
   let usuarios = getUsuarios();
   const id = parseInt(req.params.id);
   const index = usuarios.findIndex(u => u.id === id);
@@ -78,7 +71,8 @@ app.put('/usuarios/:id', (req, res) => {
   }
 });
 
-// Cargar usuarios desde JSON
+// ----------------- FUNCIONES ------------------
+
 function getUsuarios() {
   const data = fs.readFileSync('./data/usuarios.json');
   return JSON.parse(data);
@@ -88,14 +82,18 @@ function guardarUsuarios(usuarios) {
   fs.writeFileSync('./data/usuarios.json', JSON.stringify(usuarios, null, 2));
 }
 
+// ----------------- FRONTEND -------------------
+
 app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
-app.use((req, res, next) => {
+// Si no encontró nada en la API ni archivos estáticos => manda el index.html
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
 });
 
-const PORT = process.env.PORT || 8080;
+// ----------------- SERVER ---------------------
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
