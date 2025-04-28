@@ -43,8 +43,7 @@ jobs:
 
       - name: Move frontend build to backend
         run: |
-          mkdir -p pika-trading-backend/dist/pika-trading-frontend/browser
-          cp -r pika-trading-frontend/dist/pika-trading-frontend/browser/* pika-trading-backend/dist/pika-trading-frontend/browser/
+          cp -r pika-trading-frontend/dist/pika-trading-frontend pika-trading-backend/dist/
 
       - name: Zip artifact for deployment
         run: |
