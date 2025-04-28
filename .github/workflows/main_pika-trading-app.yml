@@ -79,14 +79,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F885B893B2294667A7F7F7736151E97A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CD426CC5F610471F8DCA0BC46AFABAE4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AAD76A6331AD488FAF52073FF0889BEC }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3E8F665B06CF4134B2598EF9F7ABB63F }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D5075471F73B44D8AC11246E3F0F6463 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EA40FB618E1E4195BC85E84C45C879F4 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'pika-trading-app'
+          app-name: 'Pika-trading'
           slot-name: 'Production'
           package: .
