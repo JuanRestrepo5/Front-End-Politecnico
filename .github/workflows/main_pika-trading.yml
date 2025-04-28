@@ -24,6 +24,11 @@ jobs:
         run: |
           cd pika-trading-backend
           npm install
+          
+      - name: Install express in backend
+        run: |
+          cd pika-trading-backend
+          npm install express
 
       - name: Install frontend dependencies
         run: |
