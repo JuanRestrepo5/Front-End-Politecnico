@@ -98,3 +98,4 @@ app.put('/usuarios/:id', (req, res) => {
   } else {
     res.status(404).json({ mensaje: 'Usuario no encontrado' });
   }
+});
