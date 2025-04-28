@@ -90,7 +90,7 @@ function guardarUsuarios(usuarios) {
 
 app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
-app.get('*', (req, res) => {
+app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
 });
 
