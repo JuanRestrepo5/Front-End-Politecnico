@@ -19,16 +19,6 @@ app.get("/products", (req, res) => {
   ]);
 });
 
-// Cargar usuarios desde JSON
-function getUsuarios() {
-  const data = fs.readFileSync('./data/usuarios.json');
-  return JSON.parse(data);
-}
-
-function guardarUsuarios(usuarios) {
-  fs.writeFileSync('./data/usuarios.json', JSON.stringify(usuarios, null, 2));
-}
-
 // Login
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
@@ -88,13 +78,19 @@ app.put('/usuarios/:id', (req, res) => {
   }
 });
 
+// Cargar usuarios desde JSON
+function getUsuarios() {
+  const data = fs.readFileSync('./data/usuarios.json');
+  return JSON.parse(data);
+}
+
+function guardarUsuarios(usuarios) {
+  fs.writeFileSync('./data/usuarios.json', JSON.stringify(usuarios, null, 2));
+}
+
 app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
-app.get('/*', function (req, res, next) {
-  if (req.originalUrl.startsWith('/api')) {
-    // Si quieres excluir tus rutas de API (opcional)
-    return next();
-  }
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
 });
 
