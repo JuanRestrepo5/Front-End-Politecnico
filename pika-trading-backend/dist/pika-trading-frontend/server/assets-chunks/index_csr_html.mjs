@@ -1,0 +1,24 @@
+export default `<!doctype html>
+<html lang="en" data-beasties-container="">
+<head>
+  <!-- Metadatos esenciales -->
+  <meta charset="utf-8">
+  <title>PikaTradingFrontend</title> <!-- Título de la pestaña del navegador -->
+  <base href="/"> <!-- Base para rutas relativas en Angular -->
+
+  <!-- Configuración de la vista para dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Ícono de la página (favicon) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Fuente de íconos (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>html,body{height:100%;margin:0;padding:0;font-family:Arial,sans-serif;background-color:wheat;color:#222;display:flex;flex-direction:column}app-root{display:flex;flex-direction:column;min-height:100vh}</style><link rel="stylesheet" href="styles-OCO4WD6M.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-OCO4WD6M.css"></noscript></head>
+<body ngcm="">
+  <!-- Punto de entrada de la aplicación Angular -->
+  <app-root></app-root>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-NAU2LHBR.js" type="module"></script></body>
+</html>
+
+`;

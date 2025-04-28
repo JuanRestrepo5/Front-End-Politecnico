@@ -1,0 +1,15 @@
+{
+  "routes": {
+    "/": {},
+    "/admin": {},
+    "/admin/estadisticas": {},
+    "/carrito": {},
+    "/cartas": {},
+    "/home": {},
+    "/login": {},
+    "/perfil-usuario": {},
+    "/recuperar-contrasena": {},
+    "/registro": {},
+    "/sobre-nosotros": {}
+  }
+}

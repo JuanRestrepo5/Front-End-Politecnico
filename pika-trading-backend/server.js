@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const fs = require('fs');
 const app = express();
+const path = require('path');
+
 app.use(cors());
 app.use(express.json());
 
@@ -17,8 +19,17 @@ app.get("/products", (req, res) => {
   ]);
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+app.use(express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
 
 // Cargar usuarios desde JSON
 function getUsuarios() {
