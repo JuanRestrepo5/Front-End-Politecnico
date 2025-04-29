@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // Al inicializar el componente, se hace una solicitud GET a la API
-    this.http.get<any[]>('http://localhost:3000/products')
+    this.http.get<any[]>('/api/products')
       .subscribe(data => this.products = data); // Al recibir los datos, se asignan al arreglo
   }
 }

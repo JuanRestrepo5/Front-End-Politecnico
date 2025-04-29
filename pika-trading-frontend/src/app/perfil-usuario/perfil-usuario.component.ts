@@ -31,7 +31,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
   // Envía los cambios al servidor y guarda en localStorage si tiene éxito
   guardarCambios() {
-    this.http.put(`http://localhost:3000/usuarios/${this.usuario.id}`, this.usuario)
+    this.http.put(`/api/usuarios/${this.usuario.id}`, this.usuario)
       .subscribe({
         next: () => {
           alert('Datos actualizados correctamente');

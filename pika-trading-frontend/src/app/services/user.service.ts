@@ -11,14 +11,14 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   // URL base del endpoint de usuarios
-  private apiUrl = 'http://localhost:3000/usuarios';
+  private apiUrl = '/api/usuarios';
 
   // Constructor que inyecta el cliente HTTP
   constructor(private http: HttpClient) {}
 
   // Método para crear un nuevo usuario utilizando el endpoint de registro
   crearUsuario(usuario: any) {
-    return this.http.post('http://localhost:3000/registro', usuario);
+    return this.http.post('/api/registro', usuario);
   }
 
   // Método para obtener todos los usuarios
