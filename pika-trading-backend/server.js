@@ -92,7 +92,7 @@ const indexPath = path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser
 console.log('Verificando dist path:', indexPath);
 console.log('¿Existe index.html?', fs.existsSync(indexPath));
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
   } else {
