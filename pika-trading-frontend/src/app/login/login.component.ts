@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const datos = { email: this.email, password: this.password };
 
-    this.http.post<any>('http://localhost:3000/login', datos).subscribe({
+    this.http.post<any>('/api/login', datos).subscribe({
       next: (user) => {
         this.authService.setUser(user); // Guarda el usuario autenticado en el servicio
 

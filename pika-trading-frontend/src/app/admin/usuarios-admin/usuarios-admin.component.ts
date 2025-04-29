@@ -80,7 +80,7 @@ export class UsuariosAdminComponent implements OnInit {
 
     const id = this.usuarioEditando.id;
 
-    this.http.put(`http://localhost:3000/usuarios/${id}`, this.usuarioEditando)
+    this.http.put(`/api/usuarios/${id}`, this.usuarioEditando)
       .subscribe({
         next: () => {
           const index = this.usuarios.findIndex(u => u.id === id);

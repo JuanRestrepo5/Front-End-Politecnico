@@ -41,7 +41,7 @@ export class RegistroComponent {
     };
 
     // Llamada POST al backend para registrar al usuario
-    this.http.post('http://localhost:3000/registro', nuevoUsuario)
+    this.http.post('/api/registro', nuevoUsuario)
       .subscribe({
         // Si la respuesta es exitosa
         next: (res) => {
