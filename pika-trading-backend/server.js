@@ -93,7 +93,7 @@ console.log('¿Existe index.html?', fs.existsSync(indexPath));
 app.use('/', express.static(path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser')));
 
 // Si no matchea ninguna ruta anterior => manda index.html
-app.get('/*', (req, res) => {
+app.get('/{*any}', (req, res, next) => {
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
   } else {
