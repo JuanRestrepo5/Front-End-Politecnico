@@ -1,58 +1,9 @@
 [
   {
-    "id": 1,
-    "nombre": "Admin",
+    "nombre": "Admin ad",
     "email": "admin@pikatrading.com",
-    "password": "admin123",
+    "password": "$2b$10$76emXMBpegT5JFNk6npqgO/FePMot/xFjLlNzEwPoXzFLNGhZfLKu",
+    "id": 1,
     "rol": "admin"
-  },
-  {
-    "id": 2,
-    "nombre": "Ash Ketchummm",
-    "email": "ashss@paleta.com",
-    "password": "pikachu123",
-    "rol": "usuario"
-  },
-  {
-    "id": 3,
-    "nombre": "Misty Waterflower",
-    "email": "misty@cerulean.com",
-    "password": "togepi456",
-    "rol": "usuario"
-  },
-  {
-    "id": 4,
-    "nombre": "Brock Stone",
-    "email": "brock@pewter.com",
-    "password": "onix789",
-    "rol": "usuario"
-  },
-  {
-    "id": 5,
-    "nombre": "Gar Oak",
-    "email": "gary@oaklab.com",
-    "password": "eevee321",
-    "rol": "usuario"
-  },
-  {
-    "id": 6,
-    "nombre": "Jessie",
-    "email": "jessie@equipoRocket.com",
-    "password": "james4life",
-    "rol": "usuario"
-  },
-  {
-    "id": 7,
-    "nombre": "James",
-    "email": "james@equipoRocket.com",
-    "password": "meowth!",
-    "rol": "usuario"
-  },
-  {
-    "nombre": "Jhones Osorio",
-    "correo": "asdfasd@g.com",
-    "contrasena": "123",
-    "id": 8,
-    "rol": "usuario"
   }
 ]
