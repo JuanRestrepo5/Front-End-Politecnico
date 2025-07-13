@@ -13,6 +13,11 @@ app.use(express.json());
 const usuariosRoutes = require('./routes/usuariosRoutes');
 app.use('/api', usuariosRoutes);
 
+// Verifica si el archivo de configuración de Prisma existe
+const cartasRoutes = require('./routes/cartasRoutes');
+app.use('/api/cartas', cartasRoutes);
+
+
 // ----------- FRONTEND ------------
 const indexPath = path.join(__dirname, 'dist', 'pika-trading-frontend', 'browser', 'index.html');
 
